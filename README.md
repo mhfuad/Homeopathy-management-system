@@ -4,7 +4,10 @@ npm install --save-dev nodemon
 npm install --save sequelize
 npm install --save pg pg-hstore
 
-
+npm install sequelize-cli
+  npx sequelize-cli init
+    npx sequelize-cli model:generate --name user --attributes username:string,email:string,password:string
+    npx sequelize-cli db:migrate
 
 const config = require('./config/db.config')
 const Sequelize = require('sequelize');
