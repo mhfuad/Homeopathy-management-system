@@ -9,6 +9,8 @@ npm install sequelize-cli
     npx sequelize-cli model:generate --name user --attributes username:string,email:string,password:string
     npx sequelize-cli db:migrate
 
+npm install bcrypt
+
 const config = require('./config/db.config')
 const Sequelize = require('sequelize');
 const db = new Sequelize(config.DB, config.USER, config.PASSWORD, {

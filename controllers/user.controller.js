@@ -1,3 +1,5 @@
+
+const bcrypt = require("bcrypt");
 const models = require('../models');
 var User = models.user;
 
@@ -7,9 +9,14 @@ exports.getAllUser = async (req, res) => {
 }
 
 exports.createUser = async (req, res) => {
-    const user = await User.create(req.body)
-    console.log(user.id)
-    res.json(user)
+    const salt = await bcrypt.genSalt(10);
+    const password = await bcrypt.hash(req.body.password, salt);
+    const user = await User.create({
+        username: req.body.username,
+        email: req.body.email,
+        password: password
+    })
+    res.json(user.id)
 }
 
 exports.getUser = async (req, res) => {
