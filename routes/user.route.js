@@ -2,9 +2,7 @@ module.exports = app => {
     const user = require('../controllers/user.controller');
     var router = require("express").Router();
 
-    router.get('/', (req, res)=>{
-        res.send('all user');
-    })
+    router.get('/', user.getAllUser);
 
     app.use('/api/user', router);
 }
