@@ -51,7 +51,7 @@ exports.deletePatient = async (req, res) => {
 exports.searchPatient = async (req, res) => {
     const patiant = await Patient.findAll({
         where: {
-            name: { [Op.substring]: `${req.body.name}`}
+            name: { [Op.like]: `%${req.body.name}%`}
         }
     })
     res.send(patiant);
