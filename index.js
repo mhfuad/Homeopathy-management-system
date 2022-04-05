@@ -9,8 +9,8 @@ app.get('/', (req, res) => {
 })
 
 
-
 require("./routes/user.route")(app);
+require("./routes/patient.route")(app);
 
 app.listen(port,()=>{
   console.log(`Project started on ${port}`)
