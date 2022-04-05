@@ -14,6 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
+    "ssl": {
+      "require": true,
+      "rejectUnauthorized": false
+    },
     "username": "ojtkvrhygtlwbv",
     "password": "4ea43f5caec291d48130662c5b2558ebbe657aaff954e0d0765e9195ac3fe916",
     "database": "dcc20iqvjtg40s",
