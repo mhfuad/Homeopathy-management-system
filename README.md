@@ -11,6 +11,8 @@ npm install sequelize-cli
 
 npm install bcrypt
 
+npm i jsonwebtoken
+
 const config = require('./config/db.config')
 const Sequelize = require('sequelize');
 const db = new Sequelize(config.DB, config.USER, config.PASSWORD, {

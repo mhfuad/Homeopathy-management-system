@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-
+require("./routes/auth.route")(app);
 require("./routes/user.route")(app);
 require("./routes/patient.route")(app);
 
